@@ -1,0 +1,142 @@
+
+/* Estilos generales de la página */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 16px;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.contenedor {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #00000010;
+}
+
+h1 {
+    margin-top: 0;
+    color: #1d4ed8;
+}
+
+.descripcion {
+    color: #64748b;
+}
+
+/* Formulario para crear y editar */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+/* Cada fila contiene pregunta, respuesta y acciones */
+.fila {
+    margin-bottom: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Botón que contiene el texto de la pregunta */
+.pregunta {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: bold;
+}
+
+/* El símbolo cambia según la fila esté abierta o cerrada */
+.pregunta::after {
+    content: "+";
+    float: right;
+}
+
+.fila.activa .pregunta::after {
+    content: "−";
+}
+
+/* La respuesta está cerrada por defecto */
+.respuesta {
+    display: none;
+    padding: 15px;
+    background: #f8fafc;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Solo mostramos la respuesta de la fila activa */
+.fila.activa .respuesta {
+    display: block;
+}
+
+/* Botones de editar y eliminar */
+.acciones {
+    display: flex;
+    gap: 8px;
+    padding: 10px 15px;
+    background: #f8fafc;
+}
+
+.btn-editar {
+    background: #0f766e;
+}
+
+.btn-eliminar {
+    background: #dc2626;
+}
+
+.vacio {
+    color: #64748b;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 16px;
+    }
+
+    .acciones button {
+        flex: 1;
+    }
+}

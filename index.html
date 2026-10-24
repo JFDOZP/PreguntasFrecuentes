@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas frecuentes</title>
+
+    <!-- Conectamos el archivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Cargamos JavaScript después de analizar el HTML -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Preguntas frecuentes</h1>
+        <p class="descripcion">
+            Encuentra respuestas a las preguntas más comunes.
+        </p>
+
+        <!-- Formulario para crear una pregunta -->
+        <form id="formulario">
+            <label for="pregunta">Pregunta</label>
+            <input
+                type="text"
+                id="pregunta"
+                placeholder="Escribe una pregunta"
+                required
+            >
+
+            <label for="respuesta">Respuesta</label>
+            <textarea
+                id="respuesta"
+                placeholder="Escribe la respuesta"
+                required
+            ></textarea>
+
+            <button type="submit" id="btnGuardar">
+                Crear pregunta
+            </button>
+        </form>
+
+        <h2>Listado de preguntas</h2>
+
+        <!-- Contenedor principal para delegar los eventos -->
+        <section id="listaPreguntas" class="lista-preguntas">
+            <!-- JavaScript insertará aquí las filas -->
+        </section>
+    </main>
+
+</body>
+</html>
